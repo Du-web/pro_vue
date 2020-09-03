@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<div id="app">
+    <h3 v-show="isshow">百知教育</h3>
+    <h3 v-show="true">{{msg}}</h3>
+    <input type="button" value="点击隐藏" @click="showmsg">
+    <hr>
+    <h2 v-show="count>=20">唉……</h2>
+    <input type="button" @click="change_count" value="点击">
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            msg: '生活咋就这么难',
+            isshow: true,
+            count: 22
+        },
+        methods:{
+            showmsg(){
+                this.isshow = !this.isshow;
+            },
+            change_count(){
+                this.count--;
+            }
+        }
+    })
+</script>
+
 </body>
 </html>
