@@ -13,6 +13,7 @@
 
     <p @click="click_me">点击1</p>
     <p @click="click_me2()">点击2</p>
+    <p @click="click_me3(1, 'jack', event)">点击3</p>
 </div>
 
 <script src="js/vue.min.js"></script>
@@ -31,6 +32,10 @@
                 console.log(event);
             },
             click_me2(event){
+                console.log(event);
+            },
+            click_me3(a, b, event){
+                console.log(a ,b)
                 console.log(event);
             },
         }
