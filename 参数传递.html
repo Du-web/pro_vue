@@ -12,6 +12,7 @@
     <input type="button" value="将count修改为指定的值" @click="change_count(88, 'tom')">
 
     <p @click="click_me">点击1</p>
+    <p @click="click_me2()">点击2</p>
 </div>
 
 <script src="js/vue.min.js"></script>
@@ -28,7 +29,10 @@
             },
             click_me(){
                 console.log(event);
-            }
+            },
+            click_me2(event){
+                console.log(event);
+            },
         }
     })
 </script>
