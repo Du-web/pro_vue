@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>v-bind</title>
+    <style>
+        .aa{
+            border: red 1px solid;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+<div id="app">
+<!--    <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1599118332&di=61059fac8c10f506524ce0b87eb1c259&src=http://n.sinaimg.cn/sinacn08/40/w480h360/20181201/9363-hpevhcm5874484.jpg" alt="" title="可爱的皮卡丘" class="aa">-->
+<!--    <img v-bind:src="src" alt="" v-bind:title="title" v-bind:class="{aa: showCss}">-->
+    <img :src="src" alt="" :title="title" :class="{aa: showCss}">
+    <input type="button" value="动态样式" @click="addcss">
+    <input type="button" value="切换图片" @click="changeimg">
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            title: '可爱的皮卡丘',
+            showCss:true,
+            src: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1599118332&di=61059fac8c10f506524ce0b87eb1c259&src=http://n.sinaimg.cn/sinacn08/40/w480h360/20181201/9363-hpevhcm5874484.jpg'
+        },
+        methods:{
+            addcss(){
+                this.showCss = !this.showCss
+            },
+            changeimg(){
+                this.src = 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=195734936,2926387328&fm=26&gp=0.jpg'
+            }
+        }
+    })
+</script>
+
 </body>
 </html>
