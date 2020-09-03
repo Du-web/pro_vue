@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data数据</title>
+</head>
+<body>
+
+<div id="app">
+    {{msg}}
+    <br>
+    {{msg.toUpperCase()}}
+
+    <h3>年龄: {{age}}</h3>
+
+    <p>{{age * 10}}</p>
+
+    <h3>用户名: {{user.username}}, 密码:{{user.password}}</h3>
+
+    <h3>{{users[0]}} {{users[0].username}}</h3>
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello world',
+            age: 23,
+            user: {username: '小黑', password: '123456'},
+            arr: ['山东', '北京', '上海'],
+            users: [{username: '小白', password: '1112222'}, {username: '小黄', password: '222333'}]
+        }
+    })
+</script>
+
+</body>
+</html>
