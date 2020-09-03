@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>v-model</title>
 </head>
 <body>
-$END$
+
+<div id="app">
+
+    <input type="text" v-model="message">
+    <hr>
+    <p>{{message}}</p>
+
+    <input type="button" value="点击" @click="changeValue">
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "",
+        },
+        methods:{
+            changeValue(){
+                this.message = "百知教育"
+            },
+        }
+    })
+</script>
+
 </body>
 </html>
